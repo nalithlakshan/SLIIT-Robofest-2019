@@ -1,0 +1,63 @@
+#ifndef FUNCTION_PROTOTYPE_H_
+#define FUNCTION_PROTOTYPE_H_
+
+#include "global_space_floodfill.h"
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+void MazeInit(Maze*);
+void MazeReset(Maze*);
+int MazeGetDistance(Maze*, int x, int y);
+void MazeResetDistances(Maze*);
+void MazeSetWall(Maze*, int x, int y, int value, Compass);
+int MazeHasAWall(Maze*, int x, int y, Compass compass);
+int MazeHasAWallRelative(Maze*, int x, int y, Compass forwardDir, Direction relativeDir);
+MazeCell* MazeGetRelativeAdjacentCell(Maze*, int x, int y, Compass forwardDir, Direction relativeDir);
+void MazeSetWallRelative(Maze*,
+	int x, int y, int value,
+	Compass forwardDir, Direction relativeDir);
+void MazePrint(Maze*, int tarx, int tary);
+int countDigits(int num);
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+void MousePositionInit(MousePosition* , Compass forwardDir, int startingX, int startingY);
+void MousePositionGoForward(MousePosition* );
+void MousePositionGoBackward(MousePosition* );
+void MousePositionRotateLeft(MousePosition* );
+void MousePositionRotateRight(MousePosition* );
+void MousePositionRotateBackwards(MousePosition* this);
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+void StackInit(Stack* this);
+void* StackPop(Stack* this);
+void StackPush(Stack*, void*);
+void* StackPeek(Stack*);
+int StackIsEmpty(Stack*);
+void StackReset(Stack*);
+
+void SimpleFloodFillSolve(FloodFill* this);
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+int isOptimal(MazeCell* targetCell, MazeCell* compareToCell);
+int isValidMove(MazeCell* cell1);
+int isExplored(MazeCell* cell);
+int isNotEqualDistance(MazeCell* cell1, MazeCell* cell2);
+char MoveGenGetNextMove(Maze* this, int x, int y, Compass forwardDir);
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+void execute_move_sim();
+void setup_simulation();
+void sensor_copy_sim();
+void print_mouse_position();
+
+void set_target_center();
+void set_target_home();
+void simulate();
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ ACTUAL RUN FUNCTIONS $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+void setup_run();
+void center2edge_actions();
+void edge2center_actions();
+void run_in_maze();
+
+#endif

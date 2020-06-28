@@ -1,0 +1,28 @@
+void setup(){
+	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+
+	#define PANEL_PRINT
+
+	DWT_Delay_Init ();
+
+//	while(1){
+//		panel();
+//		if(LFvalue>1500){
+//			break;
+//		}
+//	}
+	HAL_Delay(1000);
+
+//	setupGyro(1);
+//	HAL_Delay(2000);
+//	calibarateGyro();
+
+	Lcount=0;
+	Rcount=0;
+
+	display_off();
+
+}

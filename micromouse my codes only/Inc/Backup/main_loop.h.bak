@@ -1,0 +1,55 @@
+void main_loop(){
+
+//	Lcount=0;
+//	Rcount=0;
+//	pwmbase=60;
+//	while(Rcount<5000){
+//		loopStart
+//
+		panel();
+//		if(pwmbase<220){
+//			pwmbase++;
+//		}
+//		if(Rcount>4400){
+//			pwmbase--;
+//		}
+//
+//		Left_wallfollow();
+//
+//		loopEnd
+//	}
+
+
+//	beep(100);
+//	HAL_Delay(1000);
+
+
+//	panel();
+//	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 1);
+//	straight(140);
+////
+//	beep(3000, 200);
+
+//	buzzerSetFrequency(100);
+//	buzzerSetDuty(128);
+//
+//	HAL_Delay(10000);
+
+
+//print("%d,%d\n",Lcount,Rcount);
+
+
+
+//	Lcount=0;
+//	Rcount=0;
+
+//	while(~(isGyroUpdated()));
+//	printf("%f\n",getAngle());
+//	HAL_Delay(1000);
+
+//	print("HelloWorld!\n\r");
+
+
+
+
+}
